@@ -31,6 +31,58 @@ Then, inside your app `config.xml` file, in general or Android part, specify you
 <preference name="xfyun_app_id_android" value="<YOUR_KEY>" />
 ```
 
+## Permission
+
+### Android
+
+In order to allow the Speech Recognitin to work, you have to request the RECORD_AUDIO permission to Android.
+
+You may use the following ionic plugin: 
+
+```
+<plugin name="cordova-plugin-android-permissions" spec="~1.0.0" />
+```
+
+and the following code prior to Speech Recognition execution:
+
+```
+    constructor(
+        private androidPermissions: AndroidPermissions //, ...
+    ) {
+        this.initPermission();
+    }
+
+    initPermission() {
+        this.androidPermissions.checkPermission( this.androidPermissions.PERMISSION.RECORD_AUDIO ).then(
+            result => {
+                if ( result.hasPermission ) {
+                    this.init();
+                } else {
+                    this.requestPermission();
+                }
+            },
+            error => {
+                this.requestPermission();
+            }
+        );
+    }
+
+    requestPermission() {
+        this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.RECORD_AUDIO)
+            .then(success => {
+                this.init();
+            }, reqError => {
+                // error, permission is required
+            });
+    }
+
+    init() {
+        // init speech recognition
+    }
+```
+
+in case you're not on Ionic search google for 'cordova android permission'.
+
 ## Basic Usage
 
 ### Typescript
