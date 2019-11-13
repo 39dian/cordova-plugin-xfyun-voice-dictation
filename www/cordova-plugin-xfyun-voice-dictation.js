@@ -1,6 +1,6 @@
 var exec = require('cordova/exec');
 
-var xunfeiListenSpeaking = {
+var xyfunVoiceDictation = {
 	startListen:function (success,error,isShowDialog,isShowPunc){
 		exec(success,error,"XunfeiListenSpeaking","startListen",[isShowDialog,isShowPunc]);
 	},
@@ -14,13 +14,11 @@ var xunfeiListenSpeaking = {
 		exec(null,null,"XunfeiListenSpeaking","stopSpeak",[]);
 	},
 	pauseSpeaking: function() {
-        exec(null, null, 'XunfeiListenSpeaking', 'pauseSpeaking', []);
-    },
-
-    resumeSpeaking: function() {
-        exec(null, null, 'XunfeiListenSpeaking', 'resumeSpeaking', []);
-    }
-
+		exec(null, null, 'XunfeiListenSpeaking', 'pauseSpeaking', []);
+	},
+	resumeSpeaking: function() {
+		exec(null, null, 'XunfeiListenSpeaking', 'resumeSpeaking', []);
+	}
 };
 
-module.exports = xunfeiListenSpeaking;
+module.exports = xyfunVoiceDictation;

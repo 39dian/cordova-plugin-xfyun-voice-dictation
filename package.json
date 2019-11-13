@@ -1,0 +1,27 @@
+{
+  "name": "cordova-plugin-xfyun-voice-dictation",
+  "version": "0.0.1",
+  "description": "This plugin creates a bridge to provide services of Xfyun Voice Dictation on Cordova-like platforms.",
+  "cordova": {
+    "id": "cordova-plugin-xfyun-voice-dictation",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackie-d/cordova-plugin-xfyun-voice-dictation.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "Jackie Degl'Innocenti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackie-d/cordova-plugin-xfyun-voice-dictation/issues"
+  },
+  "homepage": "https://github.com/jackie-d/cordova-plugin-xfyun-voice-dictation#readme"
+}
