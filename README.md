@@ -81,7 +81,7 @@ and the following code prior to Speech Recognition execution:
     }
 ```
 
-in case you're not on Ionic search google for 'cordova android permission'.
+in case you're not on Ionic, search google for 'cordova android permission'.
 
 ## Basic Usage
 
