@@ -4,7 +4,17 @@
 
 I creted this plugin to provide a bridge to the Voice Dictation engine of Xfyun for chinese Speech Recognition feature on cordova-like platforms (Cordova, Ionic, ...)
 
+This is a Speech Recognition (aka Voice Recognition) system that's provided by Xfyun in China.
+
 This repo has been forked from the original project of @Edc-zhang.
+
+## 语音识别 > 语音听写（流式版）
+
+科大讯飞的语音听说读写的cordova插件
+
+我创建了这个插件，为Xfyun的语音听写引擎提供了桥梁，以便在类似于Cordova的平台（Cordova，Ionic等）上实现中文语音识别功能。
+
+这是Xfyun在中国提供的语音识别（又称语音识别）系统。
 
 ### Supported Platforms
 
