@@ -8,8 +8,14 @@ This repo has been forked from the original project of @Edc-zhang.
 
 ### Supported Platforms
 
-- iOS
 - Android
+- ~~iOS~~
+
+iOs support has been removed, but you can use 
+
+```<plugin name="cordova-plugin-speechrecognition" spec="~1.1.2" />```
+
+that works in all the world on iOs.
 
 ## Installation
 
@@ -114,7 +120,11 @@ To stop listen:
 xyfunVoiceDictation.stopListen();
 ```
 
-For a complete list of supported languages see: ...
+## Language Support
+
+Current support it's only for the following languages:
+
+`{ "zh_cn", "en_us" }`
 
 ## Credits
 
