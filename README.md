@@ -28,7 +28,7 @@ First, register to [Xyfun Console](https://console.xfyun.cn/services/iat) and ge
 Then, inside your app `config.xml` file, in general or Android part, specify your key:
 
 ```
-<preference name="xfyun_app_id_android" value="<YOUR_KEY>">
+<preference name="xfyun_app_id_android" value="<YOUR_KEY>" />
 ```
 
 ## Basic Usage
