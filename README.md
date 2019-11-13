@@ -11,7 +11,7 @@ This repo has been forked from the original project of @Edc-zhang.
 
 ## Installation
 
-cordova plugin add https://github.com/jackie-d/cordova-plugin-xfyun-voice-dictation.git
+cordova plugin add https://github.com/jackie-d/cordova-plugin-xfyun-voice-dictation
 
 ## Credits
 
