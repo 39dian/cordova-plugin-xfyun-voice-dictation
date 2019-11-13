@@ -10,7 +10,6 @@ import android.os.Handler;
 import android.util.Log;
 import android.widget.Toast;
 import com.iflytek.cloud.*;
-import com.iflytek.sunflower.FlowerCollector;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
@@ -24,6 +23,7 @@ import java.util.LinkedHashMap;
  * Created by Thomas.Wang on 17/2/9.
  */
 public class XunfeiListenSpeaking extends CordovaPlugin{
+
     private static String TAG = XunfeiListenSpeaking.class.getSimpleName();
     private Context context;
     private CallbackContext callbackContext;
@@ -31,20 +31,15 @@ public class XunfeiListenSpeaking extends CordovaPlugin{
     private Handler mHandler = new Handler();
 
     private  SpeechSynthesizer mTts;
-
-    // 语音听写对象
     private SpeechRecognizer mIat;
-
     private SharedPreferences mSharedPreferences;
-    // 引擎类型
     private String mEngineType = SpeechConstant.TYPE_CLOUD;
-    // 用HashMap存储听写结果
     private HashMap<String, String> mIatResults = new LinkedHashMap<String, String>();
+
     @Override
     protected void pluginInitialize() {
         super.pluginInitialize();
         context = cordova.getActivity();
-//        SpeechUtility.createUtility(context, SpeechConstant.APPID +"=584e7225");
         SpeechUtility.createUtility(context, SpeechConstant.APPID +"="+context.getString(getId("app_id","string")));
     }
 
@@ -58,21 +53,21 @@ public class XunfeiListenSpeaking extends CordovaPlugin{
         this.callbackContext = callbackContext;
         //开始听写
         if (action.equals("startListen")){
-//            boolean isShowDialog = args.getBoolean(0);
 
-//            String punc = args.getBoolean(1)?"1":"0";
             boolean isShowDialog ;
             try {
                 isShowDialog = args.getBoolean(0);
             }catch (Exception e){
                 isShowDialog = true;
             }
+
             String punc;
             try{
                 punc = args.getBoolean(1)?"1":"0";
             }catch (Exception e){
                 punc = "1";
             }
+
             if (isShowDialog){
                 Intent intent = new Intent();
                 intent.setClass(context, XunfeiDialogActivity.class);
@@ -83,38 +78,11 @@ public class XunfeiListenSpeaking extends CordovaPlugin{
                 startListenWidthNotDialog(punc);
             }
 
-
             return true;
         }
 
-        //停止听写
         if (action.equals("stopListen")) {
             stopListen();
-            return true;
-        }
-
-
-        //开始听写
-        if (action.equals("startSpeak")){
-            mToast = Toast.makeText(context, "", Toast.LENGTH_SHORT);
-            String speakMessage = args.getString(0).trim();
-            startSpeak(speakMessage);
-            return true;
-        }
-        //停止说话
-        if (action.equals("stopSpeak")){
-            stopSpeak();
-            return true;
-        }
-
-        //暂停
-        if (action.equals("pauseSpeaking")){
-            pauseSpeaking();
-            return true;
-        }
-        //继续
-        if (action.equals("resumeSpeaking")){
-            resumeSpeaking();
             return true;
         }
 
@@ -130,17 +98,17 @@ public class XunfeiListenSpeaking extends CordovaPlugin{
     int ret = 0; // 函数调用返回值
     private void startListenWidthNotDialog(String punc){
         mIat = SpeechRecognizer.createRecognizer(context, mInitListener);
+
         mSharedPreferences = context.getSharedPreferences(IatSettings.PREFER_NAME,
                 Activity.MODE_PRIVATE);
+
         if (mIat.isListening()) {
             mIat.stopListening();
         }
         // 移动数据分析，收集开始听写事件
-        FlowerCollector.onEvent(context, "iat_recognize");
         mIatResults.clear();
         // 设置参数
         setParam(punc);
-
 
         // 不显示听写对话框
         ret = mIat.startListening(mRecognizerListener);
