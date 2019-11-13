@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-xfyun-voice-dictation" version="0.0.1">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-xfyun-voice-dictation" version="0.0.2">
    <name>Xfyun Voice Dictation</name>
    <description>This plugin creates a bridge to provide services of Xfyun Voice Dictation on Cordova-like platforms.</description>
 	 
@@ -13,28 +13,23 @@
          </feature>
       </config-file>
       <config-file target="AndroidManifest.xml" parent="/manifest">
-         <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-         <uses-permission android:name="android.permission.RECORD_AUDIO" />
-         <uses-permission android:name="android.permission.INTERNET" />
-         <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-         <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-         <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-         <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-         <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-         <uses-permission android:name="android.permission.READ_CONTACTS" />
-         <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-         <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-         <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+				<uses-permission android:name="android.permission.INTERNET"/>
+				<uses-permission android:name="android.permission.RECORD_AUDIO"/>
+				<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+				<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+				<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+				<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+				<uses-permission android:name="android.permission.READ_CONTACTS"/>
+				<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+				<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+				<uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+				<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+				<uses-permission android:name="android.permission.CAMERA" />
       </config-file>
       <config-file target="AndroidManifest.xml" parent="/manifest/application">
          <activity android:name="com.thomas.xunfeilistenspeaking.XunfeiDialogActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
       </config-file>
       <!--assets-->
-      <source-file src="src/android/assets/iattest.wav" target-dir="assets" />
-      <source-file src="src/android/assets/call.bnf" target-dir="assets" />
-      <source-file src="src/android/assets/grammar_sample.abnf" target-dir="assets" />
-      <source-file src="src/android/assets/keys" target-dir="assets" />
-      <source-file src="src/android/assets/userwords" target-dir="assets" />
       <source-file src="src/android/assets/iflytek/voice_bg.9.png" target-dir="assets/iflytek" />
       <source-file src="src/android/assets/iflytek/voice_empty.png" target-dir="assets/iflytek" />
       <source-file src="src/android/assets/iflytek/voice_full.png" target-dir="assets/iflytek" />
@@ -43,12 +38,10 @@
       <source-file src="src/android/assets/iflytek/recognize.xml" target-dir="assets/iflytek" />
       <!--lib-->
       <source-file src="src/android/libs/Msc.jar" target-dir="libs" />
-      <source-file src="src/android/libs/Sunflower.jar" target-dir="libs" />
-      <source-file src="src/android/libs/armeabi/libmsc.so" target-dir="libs/armeabi" />
       <source-file src="src/android/libs/arm64-v8a/libmsc.so" target-dir="libs/arm64-v8a" />
       <source-file src="src/android/libs/armeabi-v7a/libmsc.so" target-dir="libs/armeabi-v7a" />
       <!--layout-->
-      <source-file src="src/android/res/layout/activity_xunfei_dialog.xml" target-dir="res/layout" />
+      <source-file src="src/android/res/layout/ifly_layout_mnotice_image.xml" target-dir="res/layout" />
       <!--xml-->
       <source-file src="src/android/res/xml/iat_setting.xml" target-dir="res/xml" />
       <source-file src="src/android/res/xml/ise_settings.xml" target-dir="res/xml" />

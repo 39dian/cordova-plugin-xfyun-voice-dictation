@@ -21,6 +21,37 @@ cordova plugin add https://github.com/jackie-d/cordova-plugin-xfyun-voice-dictat
 
 ionic cordova plugin add https://github.com/jackie-d/cordova-plugin-xfyun-voice-dictation
 
+## Basic Usage
+
+### Typescript
+
+On the top of any `.ts` file: 
+
+```
+declare let xyfunVoiceDictation: any;
+```
+
+To start listen:
+
+```
+xyfunVoiceDictation.startListen(
+    text => {
+        console.log('Listened:', text);
+    },
+    error => {
+        console.log('Error:', error);
+    },
+    false, // show dialog
+    false // report puntuaction
+);
+```
+
+To stop listen:
+
+```
+xyfunVoiceDictation.stopListen();
+```
+
 ## Credits
 
 Forked from: https://github.com/Edc-zhang/cordova-plugin-IFlyspeech
