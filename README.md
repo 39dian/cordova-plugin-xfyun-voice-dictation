@@ -21,6 +21,16 @@ cordova plugin add https://github.com/jackie-d/cordova-plugin-xfyun-voice-dictat
 
 ionic cordova plugin add https://github.com/jackie-d/cordova-plugin-xfyun-voice-dictation
 
+## Configuration
+
+First, register to [Xyfun Console](https://console.xfyun.cn/services/iat) and get an App ID key for your app, you'll need the service: 'Speech Recognition > Voice Dictation'.
+
+Then, inside your app `config.xml` file, in general or Android part, specify your key:
+
+```
+<preference name="xfyun_app_id_android" value="<YOUR_KEY>">
+```
+
 ## Basic Usage
 
 ### Typescript

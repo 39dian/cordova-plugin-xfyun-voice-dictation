@@ -30,17 +30,21 @@ public class XunfeiListenSpeaking extends CordovaPlugin{
     private Toast mToast;
     private Handler mHandler = new Handler();
 
-    private  SpeechSynthesizer mTts;
+    private SpeechSynthesizer mTts;
     private SpeechRecognizer mIat;
     private SharedPreferences mSharedPreferences;
     private String mEngineType = SpeechConstant.TYPE_CLOUD;
     private HashMap<String, String> mIatResults = new LinkedHashMap<String, String>();
 
+    private String xfyunAppId;
+
     @Override
     protected void pluginInitialize() {
         super.pluginInitialize();
         context = cordova.getActivity();
-        SpeechUtility.createUtility(context, SpeechConstant.APPID +"="+context.getString(getId("app_id","string")));
+        
+        this.xfyunAppId = cordova.getActivity().getIntent().getStringExtra("xfyun_app_id_android");
+        SpeechUtility.createUtility(context, SpeechConstant.APPID +"="+this.xfyunAppId );
     }
 
     private int getId(String idName,String type){
