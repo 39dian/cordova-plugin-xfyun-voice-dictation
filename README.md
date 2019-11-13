@@ -103,7 +103,7 @@ xyfunVoiceDictation.startListen(
     error => {
         console.log('Error:', error);
     },
-    false, // show dialog
+    'en_us', // language to recognize
     false // report puntuaction
 );
 ```
@@ -113,6 +113,8 @@ To stop listen:
 ```
 xyfunVoiceDictation.stopListen();
 ```
+
+For a complete list of supported languages see: ...
 
 ## Credits
 
