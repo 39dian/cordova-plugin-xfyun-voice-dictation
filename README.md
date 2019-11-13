@@ -13,7 +13,11 @@ This repo has been forked from the original project of @Edc-zhang.
 
 ## Installation
 
+### On Cordova
+
 cordova plugin add https://github.com/jackie-d/cordova-plugin-xfyun-voice-dictation
+
+### On Ionic v. 4
 
 ionic cordova plugin add https://github.com/jackie-d/cordova-plugin-xfyun-voice-dictation
 
