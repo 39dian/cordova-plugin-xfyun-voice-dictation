@@ -30,12 +30,12 @@
          <activity android:name="com.thomas.xunfeilistenspeaking.XunfeiDialogActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
       </config-file>
       <!--assets-->
-      <source-file src="src/android/assets/iflytek/voice_bg.9.png" target-dir="assets/iflytek" />
-      <source-file src="src/android/assets/iflytek/voice_empty.png" target-dir="assets/iflytek" />
-      <source-file src="src/android/assets/iflytek/voice_full.png" target-dir="assets/iflytek" />
-      <source-file src="src/android/assets/iflytek/waiting.png" target-dir="assets/iflytek" />
-      <source-file src="src/android/assets/iflytek/warning.png" target-dir="assets/iflytek" />
-      <source-file src="src/android/assets/iflytek/recognize.xml" target-dir="assets/iflytek" />
+      <source-file src="src/android/assets/iflytek/voice_bg.9.png" target-dir="assets/iflytek/voice_bg.9.png" />
+      <source-file src="src/android/assets/iflytek/voice_empty.png" target-dir="assets/iflytek/voice_empty.png" />
+      <source-file src="src/android/assets/iflytek/voice_full.png" target-dir="assets/iflytek/voice_full.png" />
+      <source-file src="src/android/assets/iflytek/waiting.png" target-dir="assets/iflytek/waiting.png" />
+      <source-file src="src/android/assets/iflytek/warning.png" target-dir="assets/iflytek/warning.png" />
+      <source-file src="src/android/assets/iflytek/recognize.xml" target-dir="assets/iflytek/recognize.xml" />
       <!--lib-->
       <source-file src="src/android/libs/Msc.jar" target-dir="libs" />
       <source-file src="src/android/libs/arm64-v8a/libmsc.so" target-dir="libs/arm64-v8a" />
