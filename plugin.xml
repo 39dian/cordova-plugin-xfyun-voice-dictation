@@ -30,7 +30,7 @@
          <activity android:name="com.thomas.xunfeilistenspeaking.XunfeiDialogActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
       </config-file>
       <!--assets-->
-      <source-file src="src/android/assets/iflytek/voice_bg.9.png" target-dir="assets/iflytek/voice_bg.9.png" />
+      <source-file src="src/android/assets/iflytek/voice_bg.9.png" target-dir="src/assets/iflytek/voice_bg.9.png" />
       <source-file src="src/android/assets/iflytek/voice_empty.png" target-dir="assets/iflytek/voice_empty.png" />
       <source-file src="src/android/assets/iflytek/voice_full.png" target-dir="assets/iflytek/voice_full.png" />
       <source-file src="src/android/assets/iflytek/waiting.png" target-dir="assets/iflytek/waiting.png" />
